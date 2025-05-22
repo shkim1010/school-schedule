@@ -1,9 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>웹사이트 제목</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>프봉</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Nanum+Gothic&display=swap');
+
+    body {
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      font-family: 'Nanum Gothic', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #5a2a5c;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Nanum Pen Script', cursive;
+      color: #ad1457;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-box, .main-container, .schedule-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(171, 71, 113, 0.3);
+      width: 360px;
+      max-width: 90vw;
+      box-sizing: border-box;
+    }
+
+    .login-box input,
+    .login-box button,
+    .main-container button.class-btn {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    .login-box input {
+      border: 2px solid #f48fb1;
+      background: #fff0f6;
+      color: #880e4f;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .login-box input:focus {
+      border-color: #ad1457;
+      background: #fff0f6;
+      box-shadow: 0 0 8px #ad1457;
+    }
+
+    .login-box button {
+      background: #ce93d8;
+      color: #5e35b1;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: #ba68c8;
+      color: white;
+    }
+
+    .main-container {
+      text-align: center;
+    }
+
+    button.class-btn {
+      background: #f48fb1;
+      color: white;
+      font-weight: 600;
+      margin: 10px 0;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(244, 143, 177, 0.4);
+    }
+
+    button.class-btn:hover {
+      background: #ad1457;
+      box-shadow: 0 6px 15px rgba(173, 20, 87, 0.6);
+      color: white;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #5a2a5c;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(171, 71, 113, 0.2);
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #fce4ec;
+      text-align: center;
+      background: #fff0f6;
+      font-weight: 600;
+    }
+
+    thead th {
+      background: #f48fb1;
+      color: white;
+      font-size: 18px;
+    }
+
+    tbody tr:hover {
+      background: #f8bbd0;
+      cursor: default;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #880e4f;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
   <h1>시간표 및 수행평가</h1>
