@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>반 목록</title>
+</head>
+<body>
+  <h1>반 목록</h1>
+  <div id="classList"></div>
+
+  <script>
+    const container = document.getElementById('classList');
+    for(let grade=1; grade<=3; grade++) {
+      for(let c=1; c<=10; c++) {
+        const btn = document.createElement('button');
+        btn.textContent = `${grade}학년 ${c}반`;
+        btn.onclick = () => {
+          localStorage.setItem('selectedClass', `${grade}-${c}`);
+          window.location.href = 'schedule.html';
+        };
+        container.appendChild(btn);
+      }
+    }
+  </script>
+</body>
+</html>
