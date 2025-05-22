@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>로그인</title>
+</head>
+<body>
+  <input id="idInput" placeholder="아이디" />
+  <input id="pwInput" type="password" placeholder="비밀번호" />
+  <button onclick="login()">로그인</button>
+  <button onclick="signup()">회원가입</button>
+
+  <script>
+    function signup() {
+      const id = document.getElementById('idInput').value;
+      const pw = document.getElementById('pwInput').value;
+      if(!id || !pw) {
+        alert('아이디와 비밀번호 모두 입력하세요.');
+        return;
+      }
+      let users = JSON.parse(localStorage.getItem('users') || '{}');
+      if(users[id]) {
+        alert('이미 있는 아이디입니다.');
+        return;
+      }
+      users[id] = pw;
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('회원가입 완료');
+    }
+
+    function login() {
+      const id = document.getElementById('idInput').value;
+      const pw = document.getElementById('pwInput').value;
+      let users = JSON.parse(localStorage.getItem('users') || '{}');
+      if(users[id] && users[id] === pw) {
+        alert('로그인 성공');
+        localStorage.setItem('loggedInUser', id);
+        window.location.href = 'main.html';
+      } else {
+        alert('아이디 또는 비밀번호가 틀렸습니다.');
+      }
+    }
+  </script>
+</body>
+</html>
