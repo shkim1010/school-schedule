@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>시간표 및 수행평가</title>
+</head>
+<body>
+  <h1>시간표 및 수행평가</h1>
+  <div id="schedule"></div>
+
+  <script>
+    // 선택한 반 정보 가져오기
+    const selectedClass = localStorage.getItem('selectedClass');
+    const container = document.getElementById('schedule');
+
+    container.innerHTML = `<h2>${selectedClass} 반 시간표 (임시)</h2>`;
+
+    // 예시 데이터 (나중에 실제 시간표 데이터로 바꿀 것)
+    const timetable = {
+      "1-1": "월: 국어, 화: 수학, 수: 영어 ...",
+      "1-2": "월: 영어, 화: 과학, 수: 체육 ...",
+      // ... 나머지 반 시간표
+    };
+
+    // 예시 수행평가 일정 (나중에 수정 가능)
+    const tasks = {
+      "1-1": ["국어 수행평가: 6월 10일", "수학 수행평가: 7월 15일"],
+      "1-2": ["영어 수행평가: 6월 12일"],
+      // ...
+    };
+
+    // 시간표 출력
+    container.innerHTML += `<p>${timetable[selectedClass] || "시간표가 없습니다."}</p>`;
+
+    // 수행평가 출력
+    if(tasks[selectedClass]) {
+      container.innerHTML += "<h3>수행평가 일정</h3><ul>";
+      tasks[selectedClass].forEach(task => {
+        container.innerHTML += `<li>${task}</li>`;
+      });
+      container.innerHTML += "</ul>";
+    } else {
+      container.innerHTML += "<p>수행평가 일정이 없습니다.</p>";
+    }
+  </script>
+</body>
+</html>
